@@ -45,7 +45,7 @@ public class productcontroller {
     }
 
     // 2. Update product & update cache for this product, evict product list cache
-    @PutMapping("/{id}")
+    @PutMapping("/product/{id}")
     //Allows multiple cache annotations on the same method.
     @Caching(
             //Always executes the method and updates the cache with the result.
@@ -58,7 +58,7 @@ public class productcontroller {
     }
 
     // 3. Delete product and evict cache entry for that product
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/product/{id}")
     // beforeinvocation Removes the cache entry before method executes (default is false, i.e., after).
     @CacheEvict(key = "#id", beforeInvocation = true)
     public String removeProductById(@PathVariable long id) {

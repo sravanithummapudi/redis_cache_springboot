@@ -9,6 +9,10 @@ import java.io.Serializable;
 
 @Entity
 public class product implements Serializable {
+    public product() {
+
+    }
+
     public product(long id, String name, String code, int quantity, double price) {
         this.id = id;
         this.name = name;
